@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>India2016AllTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>E22A351E1EF30CBF00E3E156</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2BE660F1EF7107300ECBF5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

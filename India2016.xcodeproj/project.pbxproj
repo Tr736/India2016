@@ -175,8 +175,9 @@
 		E22A35171EF30CBF00E3E156 /* India2016Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E22A35181EF30CBF00E3E156 /* India2016Tests.swift */,
-				E22A351A1EF30CBF00E3E156 /* Info.plist */,
+				E2BE660B1EF700A900ECBF5E /* Supporting Files */,
+				E2BE660A1EF700A400ECBF5E /* Data */,
+				E2BE66091EF7009E00ECBF5E /* Cases */,
 			);
 			path = India2016Tests;
 			sourceTree = "<group>";
@@ -282,6 +283,29 @@
 				E2BE66061EF45CDC00ECBF5E /* PopUpView.xib */,
 			);
 			name = Xibs;
+			sourceTree = "<group>";
+		};
+		E2BE66091EF7009E00ECBF5E /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				E22A35181EF30CBF00E3E156 /* India2016Tests.swift */,
+			);
+			name = Cases;
+			sourceTree = "<group>";
+		};
+		E2BE660A1EF700A400ECBF5E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		E2BE660B1EF700A900ECBF5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E22A351A1EF30CBF00E3E156 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

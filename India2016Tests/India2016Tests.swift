@@ -11,9 +11,13 @@ import XCTest
 
 class India2016Tests: XCTestCase {
     
+    var parseData : ParseData!
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+         parseData = ParseData()
+
     }
     
     override func tearDown() {
@@ -24,33 +28,56 @@ class India2016Tests: XCTestCase {
 
     func testAllContentLoaded(){
         
+        // given
+        let expectation  = self.expectation(description: "expected commments count to be 15 ")
+
+        
+        //when
         // content count during build is 15
-        let parseData = ParseData()
         parseData.authenticate {
-            XCTAssertEqual(parseData.array.count,15, "parse data was not 15")
+            
+            XCTAssertEqual(self.parseData.array.count,15, "parse data was not 15")
+            expectation.fulfill()
         }
+        
+        waitForExpectations(timeout: 3.0, handler: nil)
+
     }
+    
+        // then
+        
+    
+ 
     
     func testCommentsLoaded(){
         
         // use image id 838
         
-        let parseData = ParseData()
         
         parseData.fetchComments(imageID: "838") {
-            XCTAssertGreaterThan(parseData.array.count,0, "comments count doesnt contain any objects")
+            XCTAssertGreaterThan(self.parseData.array.count,0, "comments count doesnt contain any objects")
 
         }
     }
     
 
     
-    func testConnectionToServer(){
+    func testMainCollectionHasExpectedValues() {
         
+        parseData.authenticate {
+           
+            self.verifyMainCollectionHasExpectedValues(index: 0)
+
+        }
     }
     
-    func testSendComment(){
+    func verifyMainCollectionHasExpectedValues(index : Int) {
         
+        let collection  = self.parseData.array
+        
+        XCTAssertEqual(collection[index].username, "rawane", "Rawane isnt the username for this object")
+        XCTAssertEqual(collection[index].numberOfComments, "0", "number of comments dosnt equal 0")
+        XCTAssertEqual(collection[index].numberOfLikes, "1", "number of likes dosnt equal 1 for this object expected 1")
     }
     
 }
